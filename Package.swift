@@ -12,9 +12,9 @@ let package = Package(
             targets: ["Authentication"]),
     ],
     dependencies: [
-        .package(name: "DesignSystem", path: "../DesignSystem"),
-        .package(name: "Networking", path: "../Networking"),
-        .package(name: "Models", path: "../Models"),
+        .package(url: "https://github.com/SwiftjectiveCApp/Networking", from: "1.0.0"),
+        .package(url: "https://github.com/SwiftjectiveCApp/DesignSystem", from: "1.0.0"),
+        .package(url: "https://github.com/SwiftjectiveCApp/Models", from: "1.0.0"),
     ],
     targets: [
         .target(
@@ -23,14 +23,7 @@ let package = Package(
                 "DesignSystem",
                 "Networking",
                 "Models",
-//                "AuthenticationObjc"
             ]),
-//        .target(
-//            name: "AuthenticationObjc",
-//            dependencies: [],
-//            path: "Sources/AuthenticationObjc",
-//            publicHeadersPath: "Public"
-//        ),
         .testTarget(
             name: "AuthenticationTests",
             dependencies: ["Authentication"]),
